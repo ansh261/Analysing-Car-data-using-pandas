@@ -1,0 +1,104 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[70]:
+
+
+import pandas as pd
+
+
+# In[71]:
+
+
+car = pd.read_csv(r"C:\Users\ANSHUL DUA\Desktop\BA\Projects\Python\Car Data\2. Cars Data1.csv")
+
+
+# In[72]:
+
+
+car.head()
+
+
+# In[73]:
+
+
+car.shape
+
+
+# In[74]:
+
+
+car.isnull().sum()
+
+
+# In[75]:
+
+
+car['Cylinders'].fillna(car['Cylinders'].mean(), inplace = True)
+
+
+# In[76]:
+
+
+car.isnull().sum()
+
+
+# In[77]:
+
+
+car.isnull().sum()
+
+
+# In[78]:
+
+
+car.head()
+
+
+# In[79]:
+
+
+car= car.dropna()
+
+
+# In[80]:
+
+
+car.isnull().sum()
+
+
+# In[81]:
+
+
+car['Make'].value_counts()
+
+
+# In[88]:
+
+
+car [car['Origin'].isin([ 'Asia', 'Europe'])]
+
+
+# In[91]:
+
+
+car[~(car['Weight'] > 4000)]
+
+
+# In[92]:
+
+
+car['MPG_City'] = car['MPG_City'].apply(lambda x:x+3)
+
+
+# In[93]:
+
+
+car.head()
+
+
+# In[ ]:
+
+
+
+
